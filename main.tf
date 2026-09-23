@@ -15,7 +15,7 @@ resource "tls_private_key" "RSA"{
 
 resource "aws_key_pair" "ec2-key"{
     key_name = "ec2-key-pair"
-    public_key = "tls_private_key.RSA.public_key_openssh"
+    public_key = tls_private_key.RSA.public_key_openssh
 }
 
 resource "local_file" "private-key"{
