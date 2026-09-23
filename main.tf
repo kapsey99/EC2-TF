@@ -20,6 +20,6 @@ resource "aws_key_pair" "ec2-key"{
 
 resource "local_file" "private-key"{
     content = tls_private_key.RSA.private_key_pem
-    filename = 
+    filename = "/Users/kyellapp/ec2-key-pair.pem"
     file_permission = "0440"
 }
